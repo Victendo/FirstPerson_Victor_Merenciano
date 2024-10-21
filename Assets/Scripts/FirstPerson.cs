@@ -6,10 +6,11 @@ public class FirstPerson : MonoBehaviour
 {
     [SerializeField] private float velocidadMovimiento;
     CharacterController controller;
+    private Camera cam;
     // Start is called before the first frame update
     void Start()
     {
-
+        cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
 
@@ -22,9 +23,9 @@ public class FirstPerson : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         Vector2 input = new Vector2(h, v).normalized;
-        if (input.magnitude > 0)
+        if (input.sqrMagnitude > 0)
         {
-            float anguloRotacion = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            float anguloRotacion = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
             transform.eulerAngles = new Vector3(0, anguloRotacion, 0);
             Vector3 movimiento = Quaternion.Euler(0, anguloRotacion, 0) * Vector3.forward;
             controller.Move(movimiento * velocidadMovimiento * Time.deltaTime);
