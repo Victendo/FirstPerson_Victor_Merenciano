@@ -9,6 +9,7 @@ public class ThirdPerson : MonoBehaviour
     [SerializeField] private float velocidadRotacion;
     CharacterController controller;
     private Camera cam;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class ThirdPerson : MonoBehaviour
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
 
     }
 
@@ -36,6 +38,12 @@ public class ThirdPerson : MonoBehaviour
             transform.eulerAngles = new Vector3(0, anguloSuave, 0);
             Vector3 movimiento = Quaternion.Euler(0, anguloRotacion, 0) * Vector3.forward;
             controller.Move(movimiento * velocidadMovimiento * Time.deltaTime);
+            anim.SetBool("Walking", true);
+        }
+
+        else
+        {
+            anim.SetBool("Walking", false);
         }
 
 
