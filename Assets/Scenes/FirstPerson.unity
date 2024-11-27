@@ -122,6 +122,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &987130623 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5626424077523407569, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1443646841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1009232405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -292,7 +298,7 @@ GameObject:
   - component: {fileID: 1415148995}
   - component: {fileID: 1415148994}
   - component: {fileID: 1415148997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,13 +426,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5626424077523407569, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.0789082
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626424077523407569, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.0789082
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626424077523407569, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.0789082
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626424077523407569, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 265.9717
       objectReference: {fileID: 0}
     - target: {fileID: 5626424077523407569, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 113.09
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 5626424077523407569, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
         type: 3}
@@ -467,6 +488,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: pies
+      value: 
+      objectReference: {fileID: 987130623}
+    - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: piesPlayer
+      value: 
+      objectReference: {fileID: 987130623}
+    - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: alturaSalto
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: nivelGravedad
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: escalaGravedad
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: radioDeteccion
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: queEsSuelo.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
+        type: 3}
+      propertyPath: velocidadMovimiento
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
