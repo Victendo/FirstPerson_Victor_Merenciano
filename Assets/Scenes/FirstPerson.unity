@@ -507,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
         type: 3}
       propertyPath: nivelGravedad
-      value: -150
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
         type: 3}
@@ -527,7 +527,7 @@ PrefabInstance:
     - target: {fileID: 8062708372437331193, guid: 763b56b0e7b6e0c41ae2bbac721f4eb8,
         type: 3}
       propertyPath: velocidadMovimiento
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
