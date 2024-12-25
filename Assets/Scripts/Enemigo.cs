@@ -6,11 +6,16 @@ using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
+    [SerializeField] private float danhoAtaque;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float radioAtaque;
+    [SerializeField] private LayerMask queEsDanhable;
 
     private NavMeshAgent agent;
     private FirstPerson player;
     private Animator anim;
     private bool ventanaAbierta = false;
+    private bool danhoRealizado = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +30,26 @@ public class Enemigo : MonoBehaviour
     {
         Perseguir();
 
-       
+        if (ventanaAbierta && danhoRealizado == false)
+        {
+            DetectarJugador();
+        }
 
     }
 
-   
+    private void DetectarJugador()
+    {
+        Collider[] collsDetectados = Physics.OverlapSphere(attackPoint.position, radioAtaque, queEsDanhable);
+        
+        if (collsDetectados.Length > 0)
+        {
+            for (int i = 0; i < collsDetectados.Length; i++)
+            {
+                collsDetectados[i].GetComponent<FirstPerson>().RecibirDanho(danhoAtaque);
+            }
+            danhoRealizado = true;
+        }
+    }
 
     private void Perseguir()
     {
@@ -46,6 +66,7 @@ public class Enemigo : MonoBehaviour
     private void FinAtaque()
     {
         agent.isStopped = false;
+        danhoRealizado = false;
         anim.SetBool("attacking", false);
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1633200481529973907}
   - component: {fileID: 6410841568760620320}
   - component: {fileID: 1549026160483113725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 6658243983954832402}
   - component: {fileID: 6795180824220826}
   - component: {fileID: 4149856540024985941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,12 +304,11 @@ GameObject:
   - component: {fileID: 7682767948686200649}
   - component: {fileID: 7513919690649945961}
   - component: {fileID: 8062708372437331193}
-  - component: {fileID: 3195342886050042369}
-  - component: {fileID: 532823524967442485}
-  - component: {fileID: 4589898209465185877}
   - component: {fileID: 453811028824673771}
+  - component: {fileID: 3195342886050042369}
+  - component: {fileID: 4589898209465185877}
   - component: {fileID: 1606025841586884586}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,14 +353,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada8e5a20e2586a4aa64db5c2cd2ee24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidas: 100
   pies: {fileID: 6638779561792408427}
-  radioDeteccion: 0.35
+  radioDeteccion: 0.45
   queEsSuelo:
     serializedVersion: 2
     m_Bits: 8
   escalaGravedad: -9.81
-  velocidad: 0
+  velocidad: 5
   alturaSalto: 2
+--- !u!143 &453811028824673771
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647741057815951886}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.0001
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &3195342886050042369
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -404,29 +430,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &532823524967442485
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647741057815951886}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &4589898209465185877
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -449,32 +452,6 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &453811028824673771
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647741057815951886}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.0001
-  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1606025841586884586
 Rigidbody:
@@ -513,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 178004449619662558}
   - component: {fileID: 4707464591261082418}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirstPersonCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7385064573405191898}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ojos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +595,7 @@ GameObject:
   - component: {fileID: 5959404930833019236}
   - component: {fileID: 8102407791164438}
   - component: {fileID: 2344348741467374054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +611,7 @@ Transform:
   m_GameObject: {fileID: 2111688386191580881}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.394, z: 0.33}
+  m_LocalPosition: {x: -0.05, y: 0.394, z: 0.17}
   m_LocalScale: {x: 0.69706, y: 0.35686, z: 0.6792162}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -720,7 +697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3930363361372780296}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camaras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6638779561792408427}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,7 +761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5626424077523407569}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirstPerson
   m_TagString: Untagged
   m_Icon: {fileID: 0}

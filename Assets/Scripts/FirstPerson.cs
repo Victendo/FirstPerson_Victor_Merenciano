@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FirstPerson : MonoBehaviour
 {
+    [SerializeField] private float vidas;
+
     [Header("Detección del Suelo")]
     [SerializeField] private Transform pies;
     [SerializeField] private float radioDeteccion;
@@ -63,6 +65,17 @@ public class FirstPerson : MonoBehaviour
             movimientoVertical.y = Mathf.Sqrt(-2 * escalaGravedad * alturaSalto);
         }
     }
+
+    public void RecibirDanho(float danhoRecibido)
+    {
+        vidas -= danhoRecibido;
+        if ( vidas <= 0 )
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
 
     private void OnDrawGizmos()
     {
