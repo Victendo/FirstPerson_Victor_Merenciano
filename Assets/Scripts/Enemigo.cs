@@ -11,6 +11,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private float radioAtaque;
     [SerializeField] private LayerMask queEsDanhable;
 
+
     private NavMeshAgent agent;
     private FirstPerson player;
     private Animator anim;
@@ -22,6 +23,7 @@ public class Enemigo : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
+
         player = GameObject.FindObjectOfType<FirstPerson>();
     }
 
@@ -30,7 +32,7 @@ public class Enemigo : MonoBehaviour
     {
         Perseguir();
 
-        if (ventanaAbierta && danhoRealizado == false)
+        if(ventanaAbierta && danhoRealizado == false)
         {
             DetectarJugador();
         }
@@ -40,7 +42,7 @@ public class Enemigo : MonoBehaviour
     private void DetectarJugador()
     {
         Collider[] collsDetectados = Physics.OverlapSphere(attackPoint.position, radioAtaque, queEsDanhable);
-        
+
         if (collsDetectados.Length > 0)
         {
             for (int i = 0; i < collsDetectados.Length; i++)
@@ -61,7 +63,6 @@ public class Enemigo : MonoBehaviour
             anim.SetBool("attacking", true);
         }
     }
-
     #region Eventos de animacion
     private void FinAtaque()
     {
@@ -80,4 +81,8 @@ public class Enemigo : MonoBehaviour
     }
 
     #endregion
+
+
+
+
 }
