@@ -7,10 +7,10 @@ using UnityEngine.AI;
 public class Enemigo : MonoBehaviour
 {
     [SerializeField] private float danhoAtaque;
-    [SerializeField] private Transform attackPoint;
+    [SerializeField] Transform attackPoint;
     [SerializeField] private float radioAtaque;
     [SerializeField] private LayerMask queEsDanhable;
-
+    
 
     private NavMeshAgent agent;
     private FirstPerson player;
@@ -32,7 +32,7 @@ public class Enemigo : MonoBehaviour
     {
         Perseguir();
 
-        if(ventanaAbierta && danhoRealizado == false)
+        if(ventanaAbierta)
         {
             DetectarJugador();
         }
@@ -43,11 +43,14 @@ public class Enemigo : MonoBehaviour
     {
         Collider[] collsDetectados = Physics.OverlapSphere(attackPoint.position, radioAtaque, queEsDanhable);
 
-        if (collsDetectados.Length > 0)
+        if ((collsDetectados.Length > 0))
         {
             for (int i = 0; i < collsDetectados.Length; i++)
             {
-                collsDetectados[i].GetComponent<FirstPerson>().RecibirDanho(danhoAtaque);
+                if (collsDetectados[i].tag == "Player")
+                {
+                    collsDetectados[i].GetComponent<FirstPerson>().RecibirDanho(danhoAtaque);
+                }
             }
             danhoRealizado = true;
         }

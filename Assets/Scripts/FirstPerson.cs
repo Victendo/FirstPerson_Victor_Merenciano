@@ -15,6 +15,7 @@ public class FirstPerson : MonoBehaviour
     [SerializeField] private float escalaGravedad;
     [SerializeField] private float velocidad;
     [SerializeField] private float alturaSalto;
+    private Camera cam;
     
     private CharacterController controller;
 
@@ -23,6 +24,8 @@ public class FirstPerson : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -31,9 +34,11 @@ public class FirstPerson : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         Vector2 input = new Vector2(h, v).normalized;
-        float angulo = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+
+        transform.eulerAngles = new Vector3(0, cam.transform.eulerAngles.y, 0);
         if(input.sqrMagnitude > 0)
         {
+            float angulo = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
             Vector3 movimiento = Quaternion.Euler(0, angulo, 0) * Vector3.forward;
             controller.Move(movimiento * 5 * Time.deltaTime);
         }
