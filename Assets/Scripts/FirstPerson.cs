@@ -71,16 +71,24 @@ public class FirstPerson : MonoBehaviour
         }
     }
 
-    public void RecibirDanho(float danhoRecibido)
+    private bool EnSuelo()
     {
-        vidas -= danhoRecibido;
-        if ( vidas <= 0 )
-        {
-            Destroy(gameObject);
-        }
+        bool resultado = Physics.CheckSphere(pies.position, radioDeteccion, queEsSuelo);
+        return resultado;
     }
 
-
+    public void RecibirDanho(float danhoRecibido)
+    {
+        Debug.Log("Danho realizado");
+        vidas -= danhoRecibido;
+        if (vidas <= 0)
+        {
+            {
+                Destroy(gameObject);
+                Debug.Log("Jugador muerto");
+            }
+        }
+    }
 
     private void OnDrawGizmos()
     {

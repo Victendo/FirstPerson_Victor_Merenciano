@@ -350,6 +350,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3682646761545970834}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1500225683218987660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8386163218335178453}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8386163218335178453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500225683218987660}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.13, z: 0.76}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7727656434677166818}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557096528461809527
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,37 +476,6 @@ Transform:
   m_Children:
   - {fileID: 8365633251171773002}
   m_Father: {fileID: 7669347907827955654}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1696177653085387675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2578319612413652031}
-  m_Layer: 0
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2578319612413652031
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696177653085387675}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.4591043, y: 0.51712424, z: -0.5326269, w: -0.48796958}
-  m_LocalPosition: {x: -0.6351318, y: -0.77180773, z: 0.35071164}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6488398244923676956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836996849998004635
 GameObject:
@@ -802,7 +802,6 @@ Transform:
   - {fileID: 4847333087623976915}
   - {fileID: 6786799575688068416}
   - {fileID: 5993323172944624099}
-  - {fileID: 2578319612413652031}
   m_Father: {fileID: 3633888145137101938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3269450898383760796
@@ -1761,6 +1760,7 @@ Transform:
   m_Children:
   - {fileID: 1843952725921041998}
   - {fileID: 128742876626712919}
+  - {fileID: 8386163218335178453}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8290393399009074817
@@ -1776,8 +1776,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   danhoAtaque: 25
-  attackPoint: {fileID: 2578319612413652031}
-  radioAtaque: 3
+  attackPoint: {fileID: 8386163218335178453}
+  radioAtaque: 0.5
   queEsDanhable:
     serializedVersion: 2
     m_Bits: 128
@@ -1795,7 +1795,7 @@ NavMeshAgent:
   m_Acceleration: Infinity
   avoidancePriority: 50
   m_AngularSpeed: 360
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1850,9 +1850,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1.9800568
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8893204, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!95 &7521995418306314178
 Animator:
   serializedVersion: 5

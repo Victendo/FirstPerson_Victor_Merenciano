@@ -7,17 +7,15 @@ using UnityEngine.AI;
 public class Enemigo : MonoBehaviour
 {
     [SerializeField] private float danhoAtaque;
-    [SerializeField] Transform attackPoint;
+    [SerializeField] private Transform attackPoint;
     [SerializeField] private float radioAtaque;
     [SerializeField] private LayerMask queEsDanhable;
-    
 
     private NavMeshAgent agent;
     private FirstPerson player;
     private Animator anim;
     private bool ventanaAbierta = false;
     private bool danhoRealizado = false;
-    // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -32,7 +30,7 @@ public class Enemigo : MonoBehaviour
     {
         Perseguir();
 
-        if(ventanaAbierta)
+        if(ventanaAbierta && danhoRealizado == false)
         {
             DetectarJugador();
         }
@@ -42,15 +40,12 @@ public class Enemigo : MonoBehaviour
     private void DetectarJugador()
     {
         Collider[] collsDetectados = Physics.OverlapSphere(attackPoint.position, radioAtaque, queEsDanhable);
-
-        if ((collsDetectados.Length > 0))
+        if (collsDetectados.Length > 0)
         {
-            for (int i = 0; i < collsDetectados.Length; i++)
+            Debug.Log("Jugador detectado");
+            for(int i = 0; i < collsDetectados.Length; i++)
             {
-                if (collsDetectados[i].tag == "Player")
-                {
-                    collsDetectados[i].GetComponent<FirstPerson>().RecibirDanho(danhoAtaque);
-                }
+                collsDetectados[i].GetComponent<FirstPerson>().RecibirDanho(danhoAtaque);
             }
             danhoRealizado = true;
         }
@@ -78,12 +73,16 @@ public class Enemigo : MonoBehaviour
     {
         ventanaAbierta = true;
     }
+
     private void CerrarVentanaAtaque()
     {
         ventanaAbierta = false;
     }
-
     #endregion
+
+
+
+
 
 
 
