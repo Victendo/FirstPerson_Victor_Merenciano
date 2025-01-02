@@ -40,14 +40,22 @@ public class Enemigo : MonoBehaviour
     private void DetectarJugador()
     {
         Collider[] collsDetectados = Physics.OverlapSphere(attackPoint.position, radioAtaque, queEsDanhable);
+
         if (collsDetectados.Length > 0)
         {
             Debug.Log("Jugador detectado");
+
             for(int i = 0; i < collsDetectados.Length; i++)
             {
-                collsDetectados[i].GetComponent<FirstPerson>().RecibirDanho(danhoAtaque);
+                if (collsDetectados[i].tag == "Player")
+                {
+                    if (ventanaAbierta)
+                    {
+                        GameManager.Instance.RecibirDanho(danhoAtaque);
+                    }
+                }
             }
-            danhoRealizado = true;
+            
         }
     }
 

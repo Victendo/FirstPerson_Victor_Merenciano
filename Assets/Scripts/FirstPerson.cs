@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FirstPerson : MonoBehaviour
 {
-    [SerializeField] private float vidas;
 
     [Header("Detección del Suelo")]
     [SerializeField] private Transform pies;
@@ -77,18 +76,7 @@ public class FirstPerson : MonoBehaviour
         return resultado;
     }
 
-    public void RecibirDanho(float danhoRecibido)
-    {
-        Debug.Log("Danho realizado");
-        vidas -= danhoRecibido;
-        if (vidas <= 0)
-        {
-            {
-                Destroy(gameObject);
-                Debug.Log("Jugador muerto");
-            }
-        }
-    }
+   
 
     private void OnDrawGizmos()
     {
