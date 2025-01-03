@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ada8e5a20e2586a4aa64db5c2cd2ee24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas: 100
   pies: {fileID: 6638779561792408427}
   radioDeteccion: 0.45
   queEsSuelo:
@@ -936,8 +935,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.05
-      minScalar: 0.01
+      scalar: 0.1
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5798,7 +5797,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 7.139008e+31, y: 1.7718131e+28, z: 6.976833e+22, w: 7.172139e+22}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

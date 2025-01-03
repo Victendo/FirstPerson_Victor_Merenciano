@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
+    [SerializeField] private float vidas;
     [SerializeField] private float danhoAtaque;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float radioAtaque;
@@ -16,13 +17,18 @@ public class Enemigo : MonoBehaviour
     private Animator anim;
     private bool ventanaAbierta = false;
     private bool danhoRealizado = false;
+    private Rigidbody[] huesos;
+
+    public float Vidas { get => vidas; set => vidas = value; }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-
-
+        huesos = GetComponentsInChildren<Rigidbody>();
         player = GameObject.FindObjectOfType<FirstPerson>();
+
+        CambiarEstadoHuesos(true);
     }
 
     // Update is called once per frame
@@ -43,7 +49,6 @@ public class Enemigo : MonoBehaviour
 
         if (collsDetectados.Length > 0)
         {
-            Debug.Log("Jugador detectado");
 
             for(int i = 0; i < collsDetectados.Length; i++)
             {
@@ -69,6 +74,23 @@ public class Enemigo : MonoBehaviour
             anim.SetBool("attacking", true);
         }
     }
+
+    public void Morir()
+    {
+        agent.enabled = false;
+        anim.enabled = false;
+        CambiarEstadoHuesos(false);
+        Destroy(gameObject, 10);
+    }
+
+    private void CambiarEstadoHuesos(bool estado)
+    {
+        for (int i = 0; i < huesos.Length; i++)
+        {
+            huesos[i].isKinematic = estado;
+        }
+    }
+
     #region Eventos de animacion
     private void FinAtaque()
     {

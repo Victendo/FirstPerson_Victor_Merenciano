@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject jugador;
 
-    public float vidaJugador = 100;
+    public GameObject enemigo;
+
+    public float vidaJugador = 1000;
+
+    public float vidaEnemigo = 500;
 
     private void Awake()
     {
@@ -26,16 +30,16 @@ public class GameManager : MonoBehaviour
 
     public void RecibirDanho(float danhoRecibido)
     {
-        Debug.Log("Danho realizado");
         vidaJugador -= danhoRecibido;
         if (vidaJugador <= 0)
         {
             {
                 Destroy(jugador);
-                Debug.Log("Jugador muerto");
             }
         }
     }
+
+   
 
 }
 
