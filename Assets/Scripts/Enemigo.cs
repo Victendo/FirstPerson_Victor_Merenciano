@@ -52,11 +52,12 @@ public class Enemigo : MonoBehaviour
 
             for(int i = 0; i < collsDetectados.Length; i++)
             {
-                if (collsDetectados[i].tag == "Player")
+                if (collsDetectados[i].CompareTag("Player"))
                 {
                     if (ventanaAbierta)
                     {
                         GameManager.Instance.RecibirDanho(danhoAtaque);
+                        ventanaAbierta = false;
                     }
                 }
             }

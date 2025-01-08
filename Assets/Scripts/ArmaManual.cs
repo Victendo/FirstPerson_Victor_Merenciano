@@ -21,7 +21,7 @@ public class ArmaManual : MonoBehaviour
     {
         timer += 1 * Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0) && timer >= misDatos.cadenciaAtaque)
+        if (Input.GetMouseButtonDown(0) )
         {
             system.Play();
             if(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.distanciaAtaque))

@@ -33,9 +33,7 @@ public class GameManager : MonoBehaviour
         vidaJugador -= danhoRecibido;
         if (vidaJugador <= 0)
         {
-            {
-                Destroy(jugador);
-            }
+            Destroy(jugador);
         }
     }
 
