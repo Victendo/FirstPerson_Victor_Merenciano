@@ -8,16 +8,20 @@ public class ArmaManual : MonoBehaviour
     [SerializeField] private ParticleSystem system;
 
     private Camera cam;
+    private float timer;
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
+        timer = misDatos.cadenciaAtaque;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        timer += 1 * Time.deltaTime;
+
+        if (Input.GetMouseButtonDown(0) && timer >= misDatos.cadenciaAtaque)
         {
             system.Play();
             if(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.distanciaAtaque))
@@ -28,6 +32,8 @@ public class ArmaManual : MonoBehaviour
                 }
                 
             }
+
+            timer = 0;
         }
     }
 }
