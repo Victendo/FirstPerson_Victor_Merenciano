@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPerson : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class FirstPerson : MonoBehaviour
     private CharacterController controller;
 
     private Vector3 movimientoVertical;
+
+    private bool youWin;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,7 +96,14 @@ public class FirstPerson : MonoBehaviour
         Gizmos.DrawWireSphere(pies.position, radioDeteccion);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Victoria"))
+        {
+            SceneManager.LoadScene("Victoria");
+        }
 
 
+    }
 
-}
+    }

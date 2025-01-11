@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
         vidaJugador -= danhoRecibido;
         if (vidaJugador <= 0)
         {
-            Destroy(jugador);
+            SceneManager.LoadScene("Derrota");
         }
     }
 

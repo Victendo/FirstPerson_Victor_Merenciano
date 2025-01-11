@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ParteEnemigo
   - CajaMunicion
+  - Victoria
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Terreno
   - Player
   - Enemigo
-  - 
+  - Postprocessing
   - 
   - 
   - 
