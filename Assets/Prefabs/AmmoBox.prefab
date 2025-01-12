@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 131924694800828341}
   - component: {fileID: 9012244242061156598}
   - component: {fileID: 138466250582673653}
-  - component: {fileID: 5610580828251232788}
+  - component: {fileID: 6999731927777294146}
   m_Layer: 0
   m_Name: AmmoBox
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2738367834213035148}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 44.100933, y: 112.21, z: 68.87068}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 0
@@ -449,7 +449,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1214.5767, y: 551.5395, z: 750.2822}
   m_Center: {x: -18.898008, y: 25.769798, z: 2.3410916}
---- !u!95 &5610580828251232788
+--- !u!95 &6999731927777294146
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ Animator:
   m_GameObject: {fileID: 2738367834213035148}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 574b1983b500b254e950d93f04e6d296, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2cd2121321825ad4fa05962c6ff6ed39, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -529,7 +529,7 @@ Transform:
   m_GameObject: {fileID: 6651402194164554612}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70559597, y: -0, z: -0, w: 0.70861435}
-  m_LocalPosition: {x: -181.64307, y: 168.72404, z: -194.0888}
+  m_LocalPosition: {x: -181.6431, y: 168.72404, z: -194.0888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

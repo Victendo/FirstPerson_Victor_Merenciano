@@ -9,6 +9,8 @@ public class ArmaManual : MonoBehaviour
 
     private Camera cam;
     private float timer;
+
+    [SerializeField] private AudioSource sonidoDisparo;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class ArmaManual : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) )
         {
+            sonidoDisparo.Play();
             system.Play();
             if(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.distanciaAtaque))
             {

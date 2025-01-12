@@ -10,6 +10,8 @@ public class Granada : MonoBehaviour
     [SerializeField] private float radioExplosion;
     [SerializeField] private LayerMask queEsDanhable;
 
+    [SerializeField] private AudioSource sonidoExplosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class Granada : MonoBehaviour
 
     private void OnDestroy()
     {
-
+        sonidoExplosion.Play();
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         
         Collider[] collsDetectados = Physics.OverlapSphere(transform.position, radioExplosion, queEsDanhable);

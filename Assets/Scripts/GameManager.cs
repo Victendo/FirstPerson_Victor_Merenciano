@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,14 @@ public class GameManager : MonoBehaviour
 
     public float vidaEnemigo = 500;
 
+   
+    [SerializeField] private TMP_Text textoVida;
+
+
+    private void Start()
+    {
+        textoVida.SetText("Vida: " + vidaJugador.ToString());
+    }
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -32,6 +41,7 @@ public class GameManager : MonoBehaviour
     public void RecibirDanho(float danhoRecibido)
     {
         vidaJugador -= danhoRecibido;
+        textoVida.SetText("Vida: " + vidaJugador.ToString());
         if (vidaJugador <= 0)
         {
             SceneManager.LoadScene("Derrota");
