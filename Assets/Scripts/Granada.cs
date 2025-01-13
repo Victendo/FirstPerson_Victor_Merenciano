@@ -27,7 +27,7 @@ public class Granada : MonoBehaviour
 
     private void OnDestroy()
     {
-        sonidoExplosion.Play();
+        //sonidoExplosion.Play();
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         
         Collider[] collsDetectados = Physics.OverlapSphere(transform.position, radioExplosion, queEsDanhable);

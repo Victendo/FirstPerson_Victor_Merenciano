@@ -11,6 +11,6 @@ public class CajaMunicion : MonoBehaviour
     }
     public void Abrir()
     {
-        anim.SetBool("abrir", true);    
+        anim.SetTrigger("abrir");    
     }
 }

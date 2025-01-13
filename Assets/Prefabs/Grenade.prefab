@@ -52,7 +52,7 @@ MonoBehaviour:
     type: 3}
   fuerzaImpulso: 15
   tiempoVida: 3
-  radioExplosion: 0
+  radioExplosion: 10
   queEsDanhable:
     serializedVersion: 2
     m_Bits: 256
