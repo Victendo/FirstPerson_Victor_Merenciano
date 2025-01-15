@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+
         textoVida.SetText("Vida: " + vidaJugador.ToString());
     }
     private void Awake()
@@ -46,9 +47,19 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Derrota");
         }
+
+
     }
 
-   
+    public void AumentarVida()
+    {
+        vidaJugador = vidaJugador + 100;
+        textoVida.SetText("Vida: " + vidaJugador.ToString());
+    }
+
+    
+
+
 
 }
 

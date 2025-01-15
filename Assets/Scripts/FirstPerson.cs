@@ -22,9 +22,12 @@ public class FirstPerson : MonoBehaviour
     private Vector3 movimientoVertical;
 
     private bool youWin;
+
+    private GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
+        manager = GameObject.FindObjectOfType<GameManager>();
         Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
 
@@ -101,6 +104,12 @@ public class FirstPerson : MonoBehaviour
         if (other.gameObject.CompareTag("Victoria"))
         {
             SceneManager.LoadScene("Victoria");
+        }
+
+        if (other.gameObject.CompareTag("OrbeVida"))
+        {
+            Destroy(other.gameObject);
+            manager.GetComponent<GameManager>().AumentarVida();
         }
 
 

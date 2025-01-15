@@ -7,6 +7,7 @@ TagManager:
   - ParteEnemigo
   - CajaMunicion
   - Victoria
+  - OrbeVida
   layers:
   - Default
   - TransparentFX
