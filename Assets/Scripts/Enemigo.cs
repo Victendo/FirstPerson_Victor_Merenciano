@@ -18,11 +18,13 @@ public class Enemigo : MonoBehaviour
     private bool ventanaAbierta = false;
     private bool danhoRealizado = false;
     private Rigidbody[] huesos;
+    private GameManager manager;
 
     public float Vidas { get => vidas; set => vidas = value; }
 
     void Start()
     {
+        manager = GameObject.FindObjectOfType<GameManager>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         huesos = GetComponentsInChildren<Rigidbody>();
@@ -92,6 +94,7 @@ public class Enemigo : MonoBehaviour
         anim.enabled = false;
         CambiarEstadoHuesos(false);
         Destroy(gameObject, 10);
+        manager.GetComponent<GameManager>().AumentarMuertes();
     }
 
     private void CambiarEstadoHuesos(bool estado)

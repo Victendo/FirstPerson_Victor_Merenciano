@@ -20,11 +20,15 @@ public class GameManager : MonoBehaviour
    
     [SerializeField] private TMP_Text textoVida;
 
+    public float numeroMuertes = 0;
+    [SerializeField] private TMP_Text textoMuertes;
+
 
     private void Start()
     {
 
         textoVida.SetText("Vida: " + vidaJugador.ToString());
+        textoMuertes.SetText("Muertes: " + numeroMuertes.ToString());
     }
     private void Awake()
     {
@@ -55,6 +59,12 @@ public class GameManager : MonoBehaviour
     {
         vidaJugador = vidaJugador + 100;
         textoVida.SetText("Vida: " + vidaJugador.ToString());
+    }
+
+    public void AumentarMuertes()
+    {
+        numeroMuertes++;
+        textoMuertes.SetText("Muertes: " + numeroMuertes.ToString());
     }
 
     
